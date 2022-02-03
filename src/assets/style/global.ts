@@ -11,10 +11,10 @@ export const GlobalStyle = createGlobalStyle`
   --text-body: #969cb3;
   --background: #f0f2f5;
   --shape: #ffffff;
+  --green: #33CC95;
 
 }
 * {
-  background-color: --red;
 margin: 0;
 padding: 0;
 box-sizing: border-box;
