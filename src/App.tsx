@@ -9,6 +9,8 @@ export function App() {
     <>
       <GlobalStyle />
       <Header></Header>
+      <Header></Header>
+      <Header></Header>
       <Home /> 
     </>
   );
