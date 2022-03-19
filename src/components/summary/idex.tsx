@@ -9,16 +9,14 @@ interface Props {
 
 export function Summary(props: Props) {
   return (
-    <>
-      <Container>
-        <div className={props.className ? "diferent" : ""}>
-          <header>
-            <p>{ props.title }</p>
-            <span> <img src={props.image} /></span>
-          </header>
-          <strong>R${props.value }</strong>
-        </div>
-      </Container>
-    </>
+    <Container>
+      <div className={props.className ? "diferent" : ""}>
+        <header>
+          <p>{props.title}</p>
+          <img src={props.image} />
+        </header>
+        <strong>R$ {props.value}</strong>
+      </div>
+    </Container>
   );
 }
