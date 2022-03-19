@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import { Container } from "./style";
 
 export function TransactionTable(){
+
+  useEffect(() => {
+
+  }, [])
   return(
    <Container>
      <table>
@@ -14,27 +19,15 @@ export function TransactionTable(){
        </thead>
        <tbody>
          <tr>
-           <td>Titilo</td>
-           <td>200</td>
+           <td>Salario</td>
            <td>Site</td>
+           <td className="deposit">R$ 2000</td>
            <td>2019-20-20</td>
          </tr>
          <tr>
            <td>Titilo</td>
-           <td>200</td>
            <td>Site</td>
-           <td>2019-20-20</td>
-         </tr>
-         <tr>
-           <td>Titilo</td>
-           <td>200</td>
-           <td>Site</td>
-           <td>2019-20-20</td>
-         </tr>
-         <tr>
-           <td>Titilo</td>
-           <td>200</td>
-           <td>Site</td>
+           <td className="withdraw">- R$ 200</td>
            <td>2019-20-20</td>
          </tr>
        </tbody>
