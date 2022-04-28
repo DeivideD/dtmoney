@@ -3,13 +3,33 @@ import { Container } from "./style";
 import totalImg  from '../../assets/total.svg'
 import incomeImg  from '../../assets/income.svg'
 import outcomeImg  from '../../assets/outcome.svg'
+import { useContext } from "react";
+import { TrasactionContext } from "../../contexts/context";
 
 export function Dashboard(){
+  const { transactions } = useContext(TrasactionContext);
+
+  const totalEntradas = transactions.reduce((total, transaction) => {
+    if (transaction.type === 'deposit'){
+      return total + transaction.amount
+    }
+    return total;
+  }, 0);
+
+  const totalSaidas = transactions.reduce((total, transaction) => {
+    if (transaction.type === 'exit'){
+      return total + transaction.amount
+    }
+    return total;
+  }, 0);
+
+  const saldoTotal = totalEntradas - totalSaidas
+
 return(
   <Container> 
-    <Summary title="Entradas" image={incomeImg} value={150} />
-    <Summary title="Saidas" image={outcomeImg} value={50} />
-    <Summary className={true} title="Total" image={totalImg} value={100} />
+    <Summary title="Entradas" image={incomeImg} value={totalEntradas} />
+    <Summary title="Saidas" image={outcomeImg} value={totalSaidas} />
+    <Summary className={true} title="Total" image={totalImg} value={saldoTotal} />
   </Container>
  );
 }
